@@ -30,14 +30,14 @@ INSERT INTO character (name, race, character_class, character_level, player_id, 
 INSERT INTO character (name, race, character_class, character_level, player_id, campaign_id) VALUES ('Varis Nightbreeze', 'Elf', 'Druid', '3', 10, 2);
 
 
--- Populate Stats table (assuming character_id corresponds to the correct character)
-INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (18, 14, 16, 10, 12, 10, 1);
-INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (8, 14, 12, 18, 13, 12, 2);
-INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (16, 14, 18, 10, 12, 8, 3);
-INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (12, 16, 14, 10, 14, 12, 4);
-INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (14, 10, 16, 10, 18, 12, 5);
-INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (10, 18, 12, 14, 10, 14, 6);
-INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (8, 14, 14, 12, 10, 18, 7);
-INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (10, 14, 12, 14, 12, 16, 8);
-INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (10, 14, 12, 12, 10, 18, 9);
-INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (10, 14, 12, 12, 16, 10, 10);
+---- Populate Stats table (assuming character_id corresponds to the correct character)
+--INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (18, 14, 16, 10, 12, 10, 1);
+--INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (8, 14, 12, 18, 13, 12, 2);
+--INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (16, 14, 18, 10, 12, 8, 3);
+--INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (12, 16, 14, 10, 14, 12, 4);
+--INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (14, 10, 16, 10, 18, 12, 5);
+--INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (10, 18, 12, 14, 10, 14, 6);
+--INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (8, 14, 14, 12, 10, 18, 7);
+--INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (10, 14, 12, 14, 12, 16, 8);
+--INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (10, 14, 12, 12, 10, 18, 9);
+--INSERT INTO stats (strength, dexterity, constitution, intelligence, wisdom, charisma, character_id) VALUES (10, 14, 12, 12, 16, 10, 10);

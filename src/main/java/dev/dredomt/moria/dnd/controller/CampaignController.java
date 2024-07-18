@@ -1,5 +1,6 @@
 package dev.dredomt.moria.dnd.controller;
 
+import dev.dredomt.moria.dnd.dto.CampaignDTO;
 import dev.dredomt.moria.dnd.model.Campaign;
 import dev.dredomt.moria.dnd.service.CampaignService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,29 +16,27 @@ public class CampaignController {
     private CampaignService campaignService;
 
     @GetMapping("")
-    public List<Campaign> getAllCampaigns() {
+    public List<CampaignDTO> getAllCampaigns() {
         return campaignService.getAllCampaigns();
     }
 
     @GetMapping("/{id}")
-    public Campaign getCampaignById(@PathVariable Integer id) {
+    public CampaignDTO getCampaignById(@PathVariable Integer id) {
+
+        CampaignDTO campaignDTO = campaignService.getCampaignById(id);
         return campaignService.getCampaignById(id);
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
-    public Campaign createCampaign(@Validated @RequestBody Campaign campaign) {
-        return campaignService.saveCampaign(campaign);
+    public CampaignDTO createCampaign(@RequestBody CampaignDTO campaignDTO) {
+        return campaignService.createCampaign(campaignDTO);
     }
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")
-    public Campaign updateCampaign(@Validated @RequestBody Campaign campaign, @PathVariable Integer id) {
-        campaign.setId(id);
-        return campaignService.saveCampaign(campaign);
+    public CampaignDTO updateCampaign(@PathVariable Integer id, @RequestBody CampaignDTO campaignDTO) {
+        return campaignService.updateCampaign(id, campaignDTO);
     }
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void deleteCampaign(@PathVariable Integer id) {
         campaignService.deleteCampaign(id);

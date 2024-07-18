@@ -30,16 +30,3 @@ CREATE TABLE character (
     CONSTRAINT fk_player FOREIGN KEY (player_id) REFERENCES player(id),
     CONSTRAINT fk_campaign FOREIGN KEY (campaign_id) REFERENCES campaign(id)
 );
-
--- Create Stats table
-CREATE TABLE stats (
-    id SERIAL PRIMARY KEY,
-    strength INTEGER,
-    dexterity INTEGER,
-    constitution INTEGER,
-    intelligence INTEGER,
-    wisdom INTEGER,
-    charisma INTEGER,
-    character_id INTEGER NOT NULL,
-    CONSTRAINT fk_character FOREIGN KEY (character_id) REFERENCES character(id)
-);

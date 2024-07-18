@@ -1,5 +1,6 @@
 package dev.dredomt.moria.dnd.controller;
 
+import dev.dredomt.moria.dnd.dto.CharacterDTO;
 import dev.dredomt.moria.dnd.model.Character;
 import dev.dredomt.moria.dnd.service.CharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,28 +15,26 @@ public class CharacterController {
     @Autowired
     private CharacterService characterService;
 
-    @GetMapping("")
-    public List<Character> getAllCharacters() {
+    @GetMapping
+    public List<CharacterDTO> getAllCharacters() {
         return characterService.getAllCharacters();
     }
 
     @GetMapping("/{id}")
-    public Character getCharacterById(@PathVariable Integer id) {
+    public CharacterDTO getCharacterById(@PathVariable Integer id) {
         return characterService.getCharacterById(id);
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("")
-    public Character createCharacter(@Validated @RequestBody Character character) {
-        return characterService.saveCharacter(character);
+    @PostMapping
+    public CharacterDTO createCharacter(@RequestBody CharacterDTO characterDTO) {
+        return characterService.createCharacter(characterDTO);
     }
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+
     @PutMapping("/{id}")
-    public Character updateCharacter(@Validated @RequestBody Character character, @PathVariable Integer id) {
-        character.setId(id);
-        return characterService.saveCharacter(character);
+    public CharacterDTO updateCharacter(@PathVariable Integer id, @RequestBody CharacterDTO characterDTO) {
+        return characterService.updateCharacter(id, characterDTO);
     }
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+
     @DeleteMapping("/{id}")
     public void deleteCharacter(@PathVariable Integer id) {
         characterService.deleteCharacter(id);
