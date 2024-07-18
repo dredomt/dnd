@@ -1,7 +1,9 @@
 package dev.dredomt.moria.dnd.repository;
 
 import dev.dredomt.moria.dnd.model.Character;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.ListCrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface CharacterRepository extends JpaRepository<Character, Integer> {
+@Repository
+public interface CharacterRepository extends ListCrudRepository<Character, Integer> {
 }
