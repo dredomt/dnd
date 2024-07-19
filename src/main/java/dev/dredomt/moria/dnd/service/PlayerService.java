@@ -53,9 +53,8 @@ public class PlayerService {
     }
 
     public void deletePlayer(Integer id) {
-        if (!playerRepository.existsById(id)) {
-            throw new PlayerNotFoundException();
-        }
+        Player player = playerRepository.findById(id)
+                        .orElseThrow(PlayerNotFoundException::new);
         playerRepository.deleteById(id);
     }
 }

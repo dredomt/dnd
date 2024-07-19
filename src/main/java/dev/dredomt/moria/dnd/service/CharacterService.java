@@ -52,9 +52,8 @@ public class CharacterService {
     }
 
     public void deleteCharacter(Integer id) {
-        if (!characterRepository.existsById(id)) {
-            throw new CharacterNotFoundException();
-        }
+        Character character = characterRepository.findById(id)
+                .orElseThrow(CharacterNotFoundException::new);
         characterRepository.deleteById(id);
     }
 }

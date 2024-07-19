@@ -53,9 +53,8 @@ public class CampaignService {
     }
 
     public void deleteCampaign(Integer id) {
-        if (!campaignRepository.existsById(id)) {
-            throw new CampaignNotFoundException();
-        }
+        Campaign campaign = campaignRepository.findById(id)
+                        .orElseThrow(CampaignNotFoundException::new);
         campaignRepository.deleteById(id);
     }
 }
