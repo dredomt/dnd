@@ -122,6 +122,7 @@ class CampaignServiceTest {
 
     @Test
     public void testDeleteCampaign() {
+        when(campaignRepository.findById(campaignDTO.getId())).thenReturn(Optional.of(campaign));
         campaignService.deleteCampaign(campaignDTO.getId());
         verify(campaignRepository, times(1)).deleteById(campaignDTO.getId());
     }
